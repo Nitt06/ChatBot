@@ -1,0 +1,208 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw; /* fill full viewport width */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background: #202123;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.new-chat-btn {
+  background: #3a3b3c;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.new-chat-btn:hover {
+  background: #505358;
+}
+
+.chat-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chat-list-item {
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.chat-list-item:hover {
+  background: #383a3b;
+}
+
+.chat-list-item.active {
+  background: #444647;
+  font-weight: bold;
+}
+
+.voice-settings {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.voice-settings label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.voice-settings select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  background: #3a3b3c;
+  color: white;
+}
+
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: #343541;
+  color: white;
+}
+
+.messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-chat {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+  display: inline-block;
+  /* Remove flex-grow so background only wraps text */
+  background-clip: padding-box;
+  white-space: pre-line;
+  font-size: 1rem;
+}
+
+.user-msg {
+  background-color: #10a37f;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+  margin-left: auto;
+  justify-content: flex-end;
+  /* Remove width stretching */
+}
+
+.bot-msg {
+  background-color: #202123;
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+  margin-right: auto;
+  justify-content: flex-start;
+  /* Remove width stretching */
+}
+
+/* Render LaTeX/Math expressions nicely in bot messages */
+.bot-msg .katex, .bot-msg .math, .bot-msg .latex {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.08em;
+  background: transparent;
+  color: #ffe066;
+  font-family: 'Cambria Math', 'STIX Math', 'Latin Modern Math', serif;
+  overflow-x: auto;
+  padding: 0;
+}
+
+.bot-msg .katex-display {
+  display: block;
+  text-align: left;
+  margin: 12px 0;
+}
+
+.bot-msg .katex-mathml {
+  display: none;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  background: #40414f;
+  align-items: center;
+}
+
+.input-area input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 10px;
+}
+
+.input-area button {
+  background: #10a37f;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin-left: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-area button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.bot-msg a {
+  color: #4fa3ff;
+  text-decoration: underline;
+  word-break: break-all;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bot-msg a:hover {
+  color: #82cfff;
+}
