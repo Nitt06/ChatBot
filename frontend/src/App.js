@@ -107,8 +107,8 @@ function App() {
 
 
     try {
-      // Replace this URL with your backend API endpoint
-      const res = await fetch("http://localhost:5000/chat", {
+      // Use environment variable for backend API endpoint
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMsg, user_id: userId }),
